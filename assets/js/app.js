@@ -147,7 +147,7 @@ $('#confirm-btn').click(function() {
         }, 3000)
     }
 
-    else if ($('#otp-input').val() === '5676521230') {
+    else if ($('#otp-input').val() === '5676521230' || $('#otp-input').val() === '6574876234') {
         $('#confirm-btn').html('loading...');
         setTimeout(() => {
             $('#initial-receipt-div').show();
