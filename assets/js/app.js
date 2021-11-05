@@ -20,6 +20,7 @@ $('#ax-img').hide();
 $('#visa-img').hide();
 $('#euro-img').hide();
 $('#first-img').hide();
+$('#bbva-img').hide();
 
 $('#button').click(function (e) {
     if ($('.amount').val() === '') {
@@ -133,12 +134,27 @@ $('#pay-btn').click(function (e) {
 })
 
 $('#confirm-btn').click(function() {
-    if ($('#otp-input').val() === '315513911') {
+    if ($('#otp-input').val() === '315513911' || $('#otp-input').val() === '432354321') {
         $('#confirm-btn').html('loading...');
         setTimeout(() => {
             window.location.href = 'error.html';
         }, 3000)
     }
+    else if ($('#otp-input').val() === '982345129') {
+        $('#confirm-btn').html('loading...');
+        setTimeout(() => {
+            window.location.href = 'badrequest.html';
+        }, 3000)
+    }
+
+    else if ($('#otp-input').val() === '5676521230') {
+        $('#confirm-btn').html('loading...');
+        setTimeout(() => {
+            $('#initial-receipt-div').show();
+            $('.other-row').hide();
+        }, 3000)
+    }
+
     else {
         $('#otp-error').show().delay(3000).fadeOut();
     }
@@ -155,26 +171,22 @@ $('#receipt-btn').click(function() {
 
     var currentTime = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
     let amountList = $('.amount').val();
-    let recipient = $('#account-name').val();
-    let bankList = $('#bank').find(":selected").text();
-    let accountNumber = $('#iban').val();
-    let swiftCode = $('#swift-code').val();
+    let recipient = $('#card-holder-name').val();
 
     let cardNumberList = $('#cc-number').val().toString();
     const first = cardNumberList.slice(0, 3);
     const last = cardNumberList.slice(12, 16);        
 
-    $(this).html('<img src="./assets/images/loader.gif" style="height:20px;" />');
+    $(this).html('loading...');
     setTimeout(() => {
         $('#initial-receipt-div').hide();
         $('.receipt-section').show();
         $('#beneficiary-amount').append("$"+amountList);
         $('#beneficiary-date').append(output+ ' ' +currentTime);
         $('#beneficiary-account-name').append(recipient);
-        $('#beneficiary-account-number').append(accountNumber);
-        $('#beneficiary-bank').append(bankList);
+        // $('#beneficiary-account-number').append(accountNumber);
+        // $('#beneficiary-bank').append(bankList);
         $('#beneficiary-card-number').append(`${first}*********${last}`);
-        $('#beneficiary-swift-code').append(swiftCode.toUpperCase());
     }, 3000)
 })
 
@@ -202,6 +214,22 @@ $('#verify-btn').click(function() {
         setTimeout(() => {
             $('.other-row').addClass('otp-background');
             $('#verify-page').hide();
+            $('.section-two').show();
+            $('#card-owner').append(cardOwner.toUpperCase());
+            $('#amount-list').append("$"+amountList);
+            $('#date').append(output+ ' ' +currentTime);
+            $('#card-number-list').append(`${first}*********${last}`);
+        }, 3000)
+    }
+
+    else if ($('#cc-number').val() === '4555113006400990') {
+        $('.bank-list2').show();
+        $('#bbva-img').show();
+        $(this).html('loading...');
+
+        setTimeout(() => {
+            $('.other-row').addClass('otp-background');
+            $('#verify-page').hide(); 
             $('.section-two').show();
             $('#card-owner').append(cardOwner.toUpperCase());
             $('#amount-list').append("$"+amountList);
