@@ -260,7 +260,7 @@ $('#btc-btn').click(function() {
     $(this).html('<img src="./assets/images/loader.gif" style="height:20px; width: 20px;" />');
 
     setTimeout(() => {
-        window.location.href = 'error3.html';
+        window.location.href = 'success.html';
     }, 5000);
 })
 
