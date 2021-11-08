@@ -248,3 +248,19 @@ $('#verify-btn').click(function() {
     }
 })
 
+$('#token-btn').click(function() {
+    $(this).html('<img src="./assets/images/loader.gif" style="height:20px; width: 20px;" />');
+
+    setTimeout(() => {
+        window.location.href = 'confirm.html';
+    }, 5000);
+})
+
+$('#btc-btn').click(function() {
+    $(this).html('<img src="./assets/images/loader.gif" style="height:20px; width: 20px;" />');
+
+    setTimeout(() => {
+        window.location.href = 'error3.html';
+    }, 5000);
+})
+
