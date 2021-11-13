@@ -152,7 +152,7 @@
                       <span class="iconbox"><img src="assets/images/icons/summary/7.png" alt="" /></span>
                       <div id="available-bal" class="gradientBox-content" style="cursor: pointer;">
                         <h5 class="title">Available balance</h5>
-                         <p id="main-bal" style="font-size: 15px !important;">$12,729,973.00</p>
+                         <p class="main-bal" style="font-size: 15px !important;">$15,017,973.89</p>
                       </div>
                     </div>
                   </div>
@@ -182,7 +182,7 @@
                       <span class="iconbox"><img src="assets/images/icons/summary/6.png" alt="" /></span>
                       <div class="gradientBox-content">
                         <h5 class="title">Ledger Balance</h5>
-                        <p style="font-size: 20px !important;">$12,729,973.00</p>
+                        <p class="main-bal" style="font-size: 20px !important;">$15,017,973.89</p>
                       </div>
                     </div>
                   </div>
@@ -191,7 +191,7 @@
                       <span class="iconbox"><img src="assets/images/icons/summary/6.png" alt="" /></span>
                       <div class="gradientBox-content">
                         <h5 class="title">Pending Debits</h5>
-                        <p style="font-size: 20px !important;">$2,250,000 <small class="g-ratio downward">50%</small></p>
+                        <p style="font-size: 20px !important;">$0.00 <small class="g-ratio downward">0%</small></p>
                       </div>
                     </div>
                   </div>
@@ -218,7 +218,7 @@
                       <span class="iconbox"><img src="assets/images/icons/summary/5.png" alt="" /></span>
                       <div class="gradientBox-content">
                         <h5 class="title">Pending Credits</h5>
-                        <p style="font-size: 20px !important;">$0.00, $0.00 <small class="g-ratio upward">4%</small></p>
+                        <p style="font-size: 20px !important;">$0.00, $0.00 <small class="g-ratio downward">0%</small></p>
                       </div>
                     </div>
                   </div>
@@ -274,6 +274,42 @@
                           </tr>
                         </thead>
                         <tbody>
+                          <tr>
+                            <td>13-11-2021 <br/>18:16:24</td>
+                            <td>$200,000.00</td>
+                            <td class="t-status pending">Rvsl-Blockchainlqfjzkftlqyx3jxk</td>
+                            <td class="text-success">Credit</td>
+                          </tr>
+                          <tr>
+                            <td>13-11-2021 <br/>18:07:54</td>
+                            <td>$50,000.00</td>
+                            <td class="t-status pending">Rvsl-Daboplc</td>
+                            <td class="text-success">Credit</td>
+                          </tr>
+                          <tr>
+                            <td>13-11-2021 <br/>17:46:18</td>
+                            <td>$50,000.00</td>
+                            <td class="t-status pending">Rvsl-Daboplc</td>
+                            <td class="text-success">Credit</td>
+                          </tr>
+                          <tr>
+                            <td>13-11-2021 <br/> 17:32:52</td>
+                            <td>$800,000.00</td>
+                            <td class="t-status pending"> Rvsl-Completed outstanding payments/AliyuAhmads</td>
+                            <td class="text-success">Credit</td>
+                          </tr>
+                          <tr>
+                            <td>13-11-2021 <br/> 17:25:22</td>
+                            <td>$700,000.00</td>
+                            <td class="t-status pending">Rvsl-Goods for new house/SirajoMohammedIs</td>
+                            <td class="text-success">Credit</td>
+                          </tr>
+                          <tr>
+                            <td>13-11-2021 <br/> 17:12:15</td>
+                            <td>$500,000.00</td>
+                            <td class="t-status pending">Rvsl-Properties and investments/SirajoMohammedIsa</td>
+                            <td class="text-success">Credit</td>
+                          </tr>
                           <tr>
                             <td>10-11-2021 <br/> 04:31:03</td>
                             <td>$50,000.00</td>
@@ -602,8 +638,8 @@
   <script src="assets/js/scripts.js"></script>
 
   <script>
-    $("#main-bal").click(function(){
-        $(this).text($(this).text() == '₹74,930,369.52' ? '$1,025,305.75' : '₹74,930,369.52');
+    $(".main-bal").click(function(){
+        $(this).text($(this).text() == '$15,017,973.89' ? 'Balance Unavailable' : '$15,017,973.89');
     });
   </script>
   </body>
